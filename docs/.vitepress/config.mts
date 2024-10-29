@@ -1,10 +1,10 @@
-import Unocss from 'unocss/vite'
-import { defineConfig } from 'vitepress'
-import { version } from '../../package.json'
+import Unocss from "unocss/vite";
+import { defineConfig } from "vitepress";
+import { version } from "../../package.json";
 
 export default defineConfig({
-  base: '/vitepress-blog-starter/',
-  description: 'Blog included. Built on top of VitePress and UnoCSS.',
+  base: "/",
+  description: "Blog included. Built on top of VitePress and UnoCSS.",
   markdown: {
     headers: {
       level: [0, 0],
@@ -12,55 +12,52 @@ export default defineConfig({
   },
   themeConfig: {
     footer: {
-      message: 'VitePress Blog Starter',
-      copyright: 'Copyright © 2023 SFXCode',
+      message: "VitePress Blog Starter",
+      copyright: "Copyright © 2023 SFXCode",
     },
     search: {
-      provider: 'local',
+      provider: "local",
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/sfxcode/vitepress-blog-starter' },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/sfxcode/vitepress-blog-starter" }],
     editLink: {
-      pattern: 'https://github.com/sfxcode/vitepress-blog-starter/edit/main/docs/:path',
-      text: 'Edit this page on GitHub',
+      pattern: "https://github.com/sfxcode/vitepress-blog-starter/edit/main/docs/:path",
+      text: "Edit this page on GitHub",
     },
     nav: nav(),
     sidebar: {
-      '/guide/': sidebarGuide(),
-      '/config/': sidebarConfig(),
+      "/guide/": sidebarGuide(),
+      "/config/": sidebarConfig(),
     },
     blog: {
-      title: 'My Blog',
-      description: 'Some articles for sample Blog',
+      title: "My Blog",
+      description: "Some articles for sample Blog",
     },
-
   },
-  title: 'VitePress Blog Starter',
+  title: "VitePress Blog Starter",
   vite: {
     plugins: [
       Unocss({
-        configFile: '../../unocss.config.ts',
+        configFile: "../../unocss.config.ts",
       }),
     ],
   },
-})
+});
 
 function nav() {
   return [
-    { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
-    { text: 'Configs', link: '/config/', activeMatch: '/config/' },
-    { text: 'Blog', link: '/blog/', activeMatch: '/blog/' },
+    { text: "Guide", link: "/guide/", activeMatch: "/guide/" },
+    { text: "Configs", link: "/config/", activeMatch: "/config/" },
+    { text: "Blog", link: "/blog/", activeMatch: "/blog/" },
     {
-      text: 'External Docs',
+      text: "External Docs",
       items: [
         {
-          text: 'Vitepress',
-          link: 'https://vitepress.vuejs.org',
+          text: "Vitepress",
+          link: "https://vitepress.vuejs.org",
         },
         {
-          text: 'UnoCSS',
-          link: 'https://uno.antfu.me',
+          text: "UnoCSS",
+          link: "https://uno.antfu.me",
         },
       ],
     },
@@ -68,41 +65,37 @@ function nav() {
       text: version,
       items: [
         {
-          text: 'Changelog',
-          link: 'https://github.com/sfxcode/vitepress-blog-starter/blob/main/CHANGELOG.md',
+          text: "Changelog",
+          link: "https://github.com/sfxcode/vitepress-blog-starter/blob/main/CHANGELOG.md",
         },
       ],
     },
-  ]
+  ];
 }
 
 function sidebarGuide() {
   return [
     {
-      text: 'Introduction',
+      text: "Introduction",
       collapsible: true,
-      items: [
-        { text: 'What is this?', link: '/guide/' },
-      ],
+      items: [{ text: "What is this?", link: "/guide/" }],
     },
     {
-      text: 'Features',
+      text: "Features",
       collapsible: true,
-      items: [
-        { text: 'UnoCSS', link: '/guide/features/unocss' },
-      ],
+      items: [{ text: "UnoCSS", link: "/guide/features/unocss" }],
     },
-  ]
+  ];
 }
 
 function sidebarConfig() {
   return [
     {
-      text: 'Config',
+      text: "Config",
       items: [
-        { text: 'Introduction', link: '/config/' },
-        { text: 'UnoCSS', link: '/config/unocss' },
+        { text: "Introduction", link: "/config/" },
+        { text: "UnoCSS", link: "/config/unocss" },
       ],
     },
-  ]
+  ];
 }
